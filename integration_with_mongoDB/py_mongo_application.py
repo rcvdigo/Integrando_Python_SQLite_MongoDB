@@ -6,8 +6,7 @@ import datetime
 import pprint
 import pymongo as pyM
 
-client = pyM.MongoClient(
-    "mongodb+srv://rcvdigo:Theo4152*63@cluster1.fb2koin.mongodb.net/?retryWrites=true&w=majority")
+
 
 db = client.bancoMongoDB
 collection = db.test_collection
