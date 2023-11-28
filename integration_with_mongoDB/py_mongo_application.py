@@ -4,9 +4,14 @@ MongoDBAtlas
 """
 import datetime
 import pprint
-import pymongo as pyM
+import pymongo
+
+from decouple import config
 
 
+# Carrega as variáveis de ambiente do arquivo .env
+MONGO_URI = config("MONGO_URI")
+client = pymongo.MongoClient(MONGO_URI)
 
 db = client.bancoMongoDB
 collection = db.test_collection
@@ -54,7 +59,8 @@ calendario = {
 colecoes = db.colecoes  # Criando uma collection
 
 # Preparando para submeter as informações:
-# inserir_dados_MongoDB = colecoes.insert_many(new_posts).inserted_ids # Inserindo dados na collection
+# inserir_dados_MongoDB = colecoes.insert_many(new_posts).inserted_ids
+# Inserindo dados na collection
 # post_id = colecoes.insert_one(calendario).inserted_id # Inserindo dados na collection
 
 
@@ -99,7 +105,7 @@ for dados in colecoes.find({}).sort("date"):
     print("\n")
 
 # Definindo um Index no MongoDB
-result = db.profiles.create_index([('author', pyM.ASCENDING)], unique=True)
+result = db.profiles.create_index([('author', pymongo.ASCENDING)], unique=True)
 print("\n\nDefinindo um Index no MongoDB\n".title())
 print(sorted(list(db.profiles.index_information())))
 

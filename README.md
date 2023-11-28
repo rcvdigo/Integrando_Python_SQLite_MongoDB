@@ -1,3 +1,15 @@
+# A resolução do desafio parte 1 encontra-se na pasta --> integration_with_sql --> desafio_sql_alchemy_dio.py
+
+<br/>
+
+# A resolução do desafio parte 2 encontra-se na pasta --> integration_with_mongoDB --> desafio_py_mongo.py 
+
+<br/>
+
+## Para conseguir fazer a conexão ao banco de dados MongoDB na pasta integration_with_mongoDB deverá criar um arquivo chamado .env e escrever: MONGO_URI="Adicione sua string de conexão ao código do seu aplicativo"
+
+<br/>
+
 ## Parte 1 - Implementando um Banco de Dados Relacional com SQLAlchemy
 
 ### Objetivo:
