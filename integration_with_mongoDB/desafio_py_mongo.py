@@ -9,8 +9,12 @@ from decouple import config
 # Carrega as variáveis de ambiente do arquivo .env
 MONGO_URI = config("MONGO_URI")
 client = MongoClient(MONGO_URI)
+
+# Criando um banco de dados no MongoDB
 db = client.bancoMongoDB
-collection = db.test_collection
+
+# Criando uma collection
+bank = db.bank
 
 # Definição de informações para compor o DOC no MONGODBATLAS
 data = [
@@ -42,12 +46,11 @@ data = [
     }
 ]
 
-# Criando uma collection
-bank = db.bank
 print(db.list_collection_names(), end="\n")
 
 # Preparando para submeter as informações:
-inserir_dados_MongoDB = bank.insert_many(data).inserted_ids  # Inserindo dados na collection
+# Inserindo dados na collection
+inserir_dados_MongoDB = bank.insert_many(data).inserted_ids
 
 # Consultando todos os dados dentro de coleções
 for data in bank.find():
