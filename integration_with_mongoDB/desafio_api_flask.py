@@ -1,6 +1,7 @@
 """
-Desafio usando pymongo, criando coleção bank usando
-MongoDBAtlas 
+Desafio usando pymongo, criando coleção desafio_dio usando
+MongoDBAtlas e criando uma API usando o micro Framework Flask
+Fazendo o consulmo de dados persistidos no Banco de dados
 """
 from pymongo import MongoClient
 from decouple import config
